@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판 - 목록</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>📋 게시판</h1>
+
+    <div class="toolbar">
+        <a th:href="@{/posts/new}" class="btn btn-primary">✏️ 새 글 작성</a>
+    </div>
+
+    <table class="board-table">
+        <thead>
+        <tr>
+            <th style="width: 60px;">번호</th>
+            <th>제목</th>
+            <th style="width: 120px;">작성자</th>
+            <th style="width: 160px;">작성일</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${#lists.isEmpty(posts)}">
+            <td colspan="4" class="empty">등록된 게시글이 없습니다.</td>
+        </tr>
+        <tr th:each="post : ${posts}">
+            <td class="center" th:text="${post.id}">1</td>
+            <td>
+                <a th:href="@{/posts/{id}(id=${post.id})}" th:text="${post.title}">제목</a>
+            </td>
+            <td class="center" th:text="${post.author}">작성자</td>
+            <td class="center" th:text="${#temporals.format(post.createdAt, 'yyyy-MM-dd HH:mm')}">2024-01-01</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="total">
+        총 <strong th:text="${#lists.size(posts)}">0</strong>건
+    </div>
+</div>
+</body>
+</html>
