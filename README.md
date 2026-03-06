@@ -10,7 +10,7 @@ AKS(Azure Kubernetes Service) Auto Deploy 실험을 위한 Spring Boot 게시판
 - **Thymeleaf** - 서버사이드 템플릿 엔진
 - **Spring Data JPA** - 데이터 접근 계층
 - **H2 Database** - 인메모리 DB (개발/테스트용)
-- **Maven** - 빌드 도구
+- **Gradle (Kotlin DSL)** - 빌드 도구
 
 ## 기능
 
@@ -49,22 +49,21 @@ src/main/resources/
 
 ### 사전 요구사항
 - Java 17 이상
-- Maven 3.6 이상
 
 ### 빌드 및 실행
 
 ```bash
 # 빌드
-mvn clean package
+./gradlew build
 
 # 실행
-java -jar target/board-0.0.1-SNAPSHOT.jar
+java -jar build/libs/board-0.0.1-SNAPSHOT.jar
 ```
 
-또는 Maven으로 직접 실행:
+또는 Gradle로 직접 실행:
 
 ```bash
-mvn spring-boot:run
+./gradlew bootRun
 ```
 
 ### 접속
@@ -78,5 +77,5 @@ mvn spring-boot:run
 ## 테스트 실행
 
 ```bash
-mvn test
+./gradlew test
 ```

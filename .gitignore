@@ -1,11 +1,15 @@
+# Gradle
+build/
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Maven (legacy)
 target/
+
 *.class
 *.jar
 *.war
 *.ear
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
 
 # IDE
 .idea/
