@@ -1,7 +1,6 @@
 # Gradle
 build/
 .gradle/
-!gradle/wrapper/gradle-wrapper.jar
 
 # Maven (legacy)
 target/
@@ -10,6 +9,7 @@ target/
 *.jar
 *.war
 *.ear
+!gradle/wrapper/gradle-wrapper.jar
 
 # IDE
 .idea/
