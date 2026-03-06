@@ -1,0 +1,13 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: springboot-example
+  labels:
+    app.kubernetes.io/name: springboot-example
+    app.kubernetes.io/part-of: springboot-example-project
+    kubernetes.azure.com/generator: devhub
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: springboot-example

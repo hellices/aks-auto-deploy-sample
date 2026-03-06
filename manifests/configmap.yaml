@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: springboot-example-config
+  namespace: myapp
+  labels:
+    app.kubernetes.io/name: springboot-example
+    kubernetes.azure.com/generator: devhub
+data:
